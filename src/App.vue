@@ -1,26 +1,44 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <v-app>
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import envMap from '@/envMap.js';
+import { onMounted } from 'vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+
+  setup() {
+    onMounted(() => {
+      if (window.kakao && window.kakao.maps) ;
+      else {
+        const script = document.createElement('script');
+        script.type = 'text/javascript'
+        /* global kakao */
+        // script.onload = () => kakao.maps.load(initMap);
+        script.src = envMap.kakaoMapUrl;
+        document.head.appendChild(script);
+      }
+    });
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: '맑은 고딕', 'Malgun Gothic';
+  color: black;
+  font-size: 14pt;
+  line-height: 1;
+  word-break: keep-all;
+  -webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 </style>
