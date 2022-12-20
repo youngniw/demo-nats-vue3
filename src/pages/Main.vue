@@ -1,7 +1,7 @@
 <template>
     <v-container class="main ma-0 pa-1 d-flex flex-column flex-wrap" fluid>
         <v-row class="flex-grow-0">
-            <v-col class="text-right">
+            <v-col class="text-right pa-2">
                 <span class="me-1" style="color: #777777;">Today:</span> {{ date }}
             </v-col>
         </v-row>
@@ -48,6 +48,9 @@ export default {
 }
 .v-row {
     margin: 0;
+}
+.v-col {
+    padding: 0;
 }
 .main-menu {
     height: 20%;

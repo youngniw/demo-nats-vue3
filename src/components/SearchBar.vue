@@ -8,7 +8,7 @@
         variant="outlined"
         style="width: 220px;"
         @click:clear="searchCarCancel"
-        @keyup.enter="searchCarByNumber"
+        @keyup.enter="searchBySerialNumber"
         hide-details="true"
     >
     </v-text-field>
@@ -28,7 +28,7 @@ export default {
         };
 
         // 차량 검색
-        const searchCarByNumber = () => {
+        const searchBySerialNumber = () => {
             // 입력한 차량 번호에 대해 조회 + 마커 이미지 변경
             emit('loadCarInfo', parseInt(serialNumber.value));
         };
@@ -36,7 +36,7 @@ export default {
         return {
             serialNumber,
             searchCarCancel,
-            searchCarByNumber
+            searchBySerialNumber
         };
     }
 }

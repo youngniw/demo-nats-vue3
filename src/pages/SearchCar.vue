@@ -6,7 +6,7 @@
 
         <v-row class="flex-grow-0 mt-1 mb-3" justify="end">
             <v-col cols="auto">
-                <SearchBar @loadCarInfo="searchCarByNumber"></SearchBar>
+                <SearchBar @loadCarInfo="searchBySerialNumber"></SearchBar>
             </v-col>
         </v-row>
 
@@ -38,7 +38,7 @@ export default {
     setup() {
         const store = useStore();
 
-        const searchCarByNumber = (serialNumber) => {
+        const searchBySerialNumber = (serialNumber) => {
             if (serialNumber) {
                 // 차량 검색
                 const marker = store.getters['GET_MARKERS'].get(serialNumber);
@@ -73,7 +73,7 @@ export default {
         });
 
         return {
-            searchCarByNumber,
+            searchBySerialNumber,
         }
     }
 }
