@@ -84,6 +84,9 @@ export default createStore({
                 state.selectedMarker = undefined;
             };
         },
+        CLOSE_CLICKED_CAR_OVERLAY(state) {
+            state.clickedCarOverlay.setMap(null);
+        },
         SET_SELECTED_MARKER(state, marker) {
             state.selectedMarker = marker;
         },

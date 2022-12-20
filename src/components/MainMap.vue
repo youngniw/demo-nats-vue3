@@ -37,9 +37,11 @@ export default {
             if (oldVal)
                 resetMarkerImage(oldVal);
 
-            // 차량 마커가 존재할 시에는 오버레이 보여짐
+            // 차량 마커가 존재할 시에는 오버레이 보여짐 / 미존재 시에는 오버레이 사라짐
             if (val) {
                 getVehicleRecencyData(val);
+            } else {
+                store.commit('CLOSE_CLICKED_CAR_OVERLAY');
             }
         });
 
