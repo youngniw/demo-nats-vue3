@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Main from '@/pages/Main.vue';
 import SearchCar from '@/pages/SearchCar.vue';
+import CarList from '@/pages/CarList.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -16,6 +17,12 @@ const router = createRouter({
             path: '/search-car',
             name: 'SearchCar',
             component: SearchCar
+        },
+        {
+            // (페이지) 차량 목록
+            path: '/carlist',
+            name: 'CarList',
+            component: CarList
         },
     ]
 });
